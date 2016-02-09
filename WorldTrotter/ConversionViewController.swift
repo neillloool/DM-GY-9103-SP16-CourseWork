@@ -61,7 +61,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 }
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
-        let exsitingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
+        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
         let replacementTextHasDecimalSeparator = string.rangeOfString(".")
         let letters = NSCharacterSet.letterCharacterSet()
         let replacmentTextHasAlphabeticCharacters = string.rangeOfCharacterFromSet(letters)
@@ -69,7 +69,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         if(replacmentTextHasAlphabeticCharacters != nil) {
             return false
         } else {
-            if exsitingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil{
+            if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil{
                 return false
             } else {
                 return true
