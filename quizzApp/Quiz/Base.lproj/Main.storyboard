@@ -43,6 +43,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-f5-TeD">
+                                <rect key="frame" x="279" y="73" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,22 +56,28 @@
                             <constraint firstItem="LnM-ra-Uxe" firstAttribute="centerX" secondItem="ATC-he-rZS" secondAttribute="centerX" id="631-j2-D4Y"/>
                             <constraint firstItem="61W-Dk-Xxl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7By-ag-vL3"/>
                             <constraint firstItem="61W-Dk-Xxl" firstAttribute="centerX" secondItem="ATC-he-rZS" secondAttribute="centerX" id="8fl-60-xvX"/>
+                            <constraint firstItem="ATC-he-rZS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IHJ-Cw-Kqx"/>
                             <constraint firstItem="LnM-ra-Uxe" firstAttribute="top" secondItem="61W-Dk-Xxl" secondAttribute="bottom" constant="8" id="LKY-mD-OM9"/>
                             <constraint firstItem="61W-Dk-Xxl" firstAttribute="top" secondItem="ATC-he-rZS" secondAttribute="bottom" constant="149" id="Nhb-V9-jrt"/>
                             <constraint firstItem="IQ0-DZ-uhg" firstAttribute="centerX" secondItem="ATC-he-rZS" secondAttribute="centerX" id="XJU-A0-SID"/>
                             <constraint firstItem="LnM-ra-Uxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyf-g3-m5J"/>
+                            <constraint firstItem="JrS-f5-TeD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fZG-ED-amG"/>
                             <constraint firstItem="ATC-he-rZS" firstAttribute="top" secondItem="IQ0-DZ-uhg" secondAttribute="bottom" constant="20" id="gtz-UX-kWC"/>
                             <constraint firstItem="61W-Dk-Xxl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u2R-Zm-oWU"/>
-                            <constraint firstItem="ATC-he-rZS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wgr-4T-0ph"/>
+                            <constraint firstItem="JrS-f5-TeD" firstAttribute="top" secondItem="IQ0-DZ-uhg" secondAttribute="top" id="x9E-dy-w3Z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="61W-Dk-Xxl" id="WAJ-Qn-JS1"/>
-                        <outlet property="questionLabel" destination="IQ0-DZ-uhg" id="jlJ-JH-CbU"/>
+                        <outlet property="currentQuestionLabel" destination="IQ0-DZ-uhg" id="ndj-iB-zze"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="XJU-A0-SID" id="ImU-GM-BOc"/>
+                        <outlet property="nextQuestionLabel" destination="JrS-f5-TeD" id="ter-1V-5sH"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="fZG-ED-amG" id="AZJ-pu-erm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
 </document>
