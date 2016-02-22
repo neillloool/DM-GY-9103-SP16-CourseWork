@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "1A3-jc-urr"; */
+"1A3-jc-urr.text" = "est vraiment";
+
+/* Class = "UITabBarItem"; title = "Web"; ObjectID = "2Vj-dW-s49"; */
+"2Vj-dW-s49.title" = "Réseau";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "49d-Zw-RdI"; */
+"49d-Zw-RdI.title" = "Carte";
+
+/* Class = "UIViewController"; title = "Convert"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Convertir";
+
+/* Class = "UILabel"; text = "degrees Celsius"; ObjectID = "EQy-aC-XLh"; */
+"EQy-aC-XLh.text" = "Degrés Celsius";
+
+/* Class = "UIViewController"; title = "Web"; ObjectID = "Eog-4i-Fbn"; */
+"Eog-4i-Fbn.title" = "Réseau";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "Lql-53-p1U"; */
+"Lql-53-p1U.title" = "Convertir";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "Vsf-iF-l26"; */
+"Vsf-iF-l26.title" = "Carte";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "nhb-ss-jev"; */
+"nhb-ss-jev.text" = "100";
+
+/* Class = "UITextField"; text = "VALUE"; ObjectID = "oQV-Hp-IWi"; */
+"oQV-Hp-IWi.text" = "Valeur";
+
+/* Class = "UILabel"; text = "Degrees Fahrenheit"; ObjectID = "oo1-Wm-qc0"; */
+"oo1-Wm-qc0.text" = "Degrés Fahrenheit";

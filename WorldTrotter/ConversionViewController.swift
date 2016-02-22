@@ -81,23 +81,31 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 }
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
-        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
-        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
-        let letters = NSCharacterSet.letterCharacterSet()
-        let replacmentTextHasAlphabeticCharacters = string.rangeOfCharacterFromSet(letters)
+        let currentLocale = NSLocale.currentLocale()
+        let decimalSeparator =
+            currentLocale.objectForKey(NSLocaleDecimalSeparator) as! String
         
-        if(replacmentTextHasAlphabeticCharacters != nil) {
+        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.rangeOfString(decimalSeparator)
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
             return false
-        } else {
-            if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil{
-                return false
-            } else {
-                return true
-            }
         }
-        
+        else {
+            return true
+        }
+    }
+    
+    @IBAction func fahrenheitFieldEditingChanges(textField: UITextField) {
+        if let text = textField.text, let number = numberFormatter.numberFromString(text) {
+            fahrenheitValue = number.doubleValue
+        }
+        else {
+            fahrenheitValue = nil
+        }
+    }
+    
+}
+
       
-        
-        
-}
-}
+    
