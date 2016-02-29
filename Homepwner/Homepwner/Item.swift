@@ -6,7 +6,7 @@
 //  Copyright © 2016 Neill Chua. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Item: NSObject {
     
@@ -15,14 +15,13 @@ class Item: NSObject {
     var serialNumber: String?
     let dateCreated: NSDate
     
-    
-    init(name: String, serialNumber: String?, valueInDollars: Int){
+    init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
-        self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
+        self.valueInDollars = valueInDollars
         self.dateCreated = NSDate()
-        
     }
+    
     convenience init(random: Bool = false) {
         if random {
             let adjectives = ["Fluffy", "Rusty", "Shiny"]
@@ -37,15 +36,15 @@ class Item: NSObject {
             let randomName = "\(randomAdjective) \(randomNoun)"
             let randomValue = Int(arc4random_uniform(100))
             let randomSerialNumber =
-                NSUUID().UUIDString.componentsSeparatedByString("-").first!
+            NSUUID().UUIDString.componentsSeparatedByString("-").first!
             
             self.init(name: randomName,
-                      serialNumber: randomSerialNumber,
-                      valueInDollars: randomValue)
+                serialNumber: randomSerialNumber,
+                valueInDollars: randomValue)
         }
         else {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
-
-}
+    }
+    
 }
