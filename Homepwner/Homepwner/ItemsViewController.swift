@@ -107,6 +107,8 @@ class ItemsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell",
                                                                forIndexPath: indexPath) as! ItemCell
         
+        if indexPath.row < itemStore.allItems.count{
+        
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
@@ -119,7 +121,24 @@ class ItemsViewController: UITableViewController {
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "$\(item.valueInDollars)"
-        
+        }
+        else {
+            cell.textLabel?.text = "No More Items!"
+            cell.detailTextLabel?.text = ""
+        }
         return cell
     }
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < itemStore.allItems.count
+        {
+            return 60
+        }
+        else
+        {
+            return 44
+        }
+    }
+
 }
