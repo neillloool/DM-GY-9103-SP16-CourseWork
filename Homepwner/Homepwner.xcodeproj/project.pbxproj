@@ -16,6 +16,7 @@
 		6B64C1211B84C8EB00288BE3 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1201B84C8EB00288BE3 /* ItemsViewController.swift */; };
 		6B64C1231B84C9C900288BE3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1221B84C9C900288BE3 /* Item.swift */; };
 		6B64C1251B84CB3F00288BE3 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1241B84CB3F00288BE3 /* ItemStore.swift */; };
+		985383321C8D334B00A6CE6D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985383311C8D334B00A6CE6D /* DetailViewController.swift */; };
 		98E89AA11C8524C200AF2A61 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E89AA01C8524C200AF2A61 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		6B64C1201B84C8EB00288BE3 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		6B64C1221B84C9C900288BE3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6B64C1241B84CB3F00288BE3 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		985383311C8D334B00A6CE6D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		98E89AA01C8524C200AF2A61 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				6B64C0F21B84C7C300288BE3 /* AppDelegate.swift */,
 				98E89AA01C8524C200AF2A61 /* ItemCell.swift */,
 				6B64C0F61B84C7C300288BE3 /* Main.storyboard */,
+				985383311C8D334B00A6CE6D /* DetailViewController.swift */,
 				6B64C0F91B84C7C300288BE3 /* Assets.xcassets */,
 				6B64C0FB1B84C7C300288BE3 /* LaunchScreen.storyboard */,
 				6B64C0FE1B84C7C300288BE3 /* Info.plist */,
@@ -267,6 +270,7 @@
 				6B64C1211B84C8EB00288BE3 /* ItemsViewController.swift in Sources */,
 				6B64C1231B84C9C900288BE3 /* Item.swift in Sources */,
 				6B64C1251B84CB3F00288BE3 /* ItemStore.swift in Sources */,
+				985383321C8D334B00A6CE6D /* DetailViewController.swift in Sources */,
 				6B64C0F31B84C7C300288BE3 /* AppDelegate.swift in Sources */,
 				98E89AA11C8524C200AF2A61 /* ItemCell.swift in Sources */,
 			);
