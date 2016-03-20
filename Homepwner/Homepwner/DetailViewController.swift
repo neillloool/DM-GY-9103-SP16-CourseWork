@@ -7,17 +7,23 @@
 //
 
 import UIKit
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController, UITextFieldDelegate{
+    @IBAction func backgroundTapped(sender: AnyObject) {
+        view.endEditing(true)
+    }
     
-    @IBOutlet var nameField: UITextField!
     
     @IBOutlet var serialNumberFIeld: UITextField!
+    @IBOutlet var nameField: CustomTextField!
+    @IBOutlet var serialNumberField: CustomTextField!
+    @IBOutlet var valueField: CustomTextField!
     
-    @IBOutlet var valueField: UITextField!
-    @IBOutlet var dateLabel: UILabel!
     
-    
-    var item: Item!
+    var item: Item! {
+        didSet {
+        navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -42,8 +48,34 @@ class DetailViewController: UIViewController{
         nameField.text = item.name
         serialNumberFIeld.text = item.serialNumber
         valueField.text = numberFormatter.stringFromNumber(item.valueInDollars)
-        dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
+        valueField.keyboardType = UIKeyboardType.NumberPad
         
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Clear first responder
+        view.endEditing(true)
+        
+        // "Save" changes to item
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialNumberFIeld.text
+        
+        if let valueText = valueField.text,
+            let value = numberFormatter.numberFromString(valueText) {
+            item.valueInDollars = value.integerValue
+        }
+        else {
+            item.valueInDollars = 0
+        }
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
 }
 

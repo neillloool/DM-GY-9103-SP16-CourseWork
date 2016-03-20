@@ -12,6 +12,13 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
+    }
+
+    
     @IBAction func addNewItem(sender: AnyObject) {
         // Create a new Item and add it to the store
         let newItem = itemStore.createItem()
@@ -24,38 +31,21 @@ class ItemsViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
-    
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        // If you are currently in editing mode...
-        if editing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", forState: .Normal)
-            
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        }
-        else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", forState: .Normal)
-            
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
-    }
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Get the height of the status bar
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+       
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // If the triggered segue is the "ShowItem" segue
