@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "counterapp/CounterViewController.swift"
+            timestampString = "480383619.667985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CounterViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "counterapp.CounterViewController.__deallocating_deinit"
+                  moduleName = "counterapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Neill/Documents/IOS/DM-GY-9103-SP16-CourseWork/DM-GY-9103-SP16-CourseWork/counterapp/counterapp/CounterViewController.swift"
+                  timestampString = "480386361.557529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "counterapp.CounterViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; counterapp.CounterViewController"
+                  moduleName = "counterapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Neill/Documents/IOS/DM-GY-9103-SP16-CourseWork/DM-GY-9103-SP16-CourseWork/counterapp/counterapp/CounterViewController.swift"
+                  timestampString = "480386361.557681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "counterapp.CounterViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;counterapp.CounterViewController&gt;"
+                  moduleName = "counterapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Neill/Documents/IOS/DM-GY-9103-SP16-CourseWork/DM-GY-9103-SP16-CourseWork/counterapp/counterapp/CounterViewController.swift"
+                  timestampString = "480386361.5578"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "counterapp/CounterDataStore.swift"
+            timestampString = "480386361.520421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "CounterDataStore"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

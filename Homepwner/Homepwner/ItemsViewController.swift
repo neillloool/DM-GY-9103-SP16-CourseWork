@@ -11,6 +11,7 @@ import UIKit
 class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
+    var imageStore: ImageStore!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,6 +32,22 @@ class ItemsViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // If the triggered segue is the "ShowItem" segue
+        if segue.identifier == "ShowItem" {
+            
+            // Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                
+                // Get the item associated with this row and pass it along
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destinationViewController as! DetailViewController
+                detailViewController.item = item
+                detailViewController.imageStore = imageStore
+            }
+        }
+    }
+
        
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,20 +64,6 @@ class ItemsViewController: UITableViewController {
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // If the triggered segue is the "ShowItem" segue
-        if segue.identifier == "ShowItem" {
-            
-            // Figure out which row was just tapped
-            if let row = tableView.indexPathForSelectedRow?.row {
-                
-                // Get the item associated with this row and pass it along
-                let item = itemStore.allItems[row]
-                let detailViewController = segue.destinationViewController as! DetailViewController
-                detailViewController.item = item
-            }
-
-        }}
     override func tableView(tableView: UITableView,
         moveRowAtIndexPath sourceIndexPath: NSIndexPath,
         toIndexPath destinationIndexPath: NSIndexPath) {
@@ -69,36 +72,39 @@ class ItemsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            // If the table view is asking to commit a delete command...
-            if editingStyle == .Delete {
-                let item = itemStore.allItems[indexPath.row]
-                
-                
-                let title = "Remove \(item.name)?"
-                let message = "Are you sure you want to remove this item?"
-                
-                let ac = UIAlertController(title: title,
-                    message: message,
-                    preferredStyle: .ActionSheet)
-                
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-                ac.addAction(cancelAction)
-                
-                let deleteAction = UIAlertAction(title: "Delete", style: .Destructive,
-                    handler: { (action) -> Void in
-                        // Remove the item from the store
-                        self.itemStore.removeItem(item)
-                        
-                        // Also remove that row from the table view with an animation
-                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                })
-                ac.addAction(deleteAction)
-                
-                // Present the alert controller
-                presentViewController(ac, animated: true, completion: nil)
-            }
+                  commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+                                     forRowAtIndexPath indexPath: NSIndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .Delete {
+            let item = itemStore.allItems[indexPath.row]
+            
+            
+            let title = "Delete \(item.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title,
+                                       message: message,
+                                       preferredStyle: .ActionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive,
+                                                              handler: { (action) -> Void in
+                                                                // Remove the item from the store
+                                                                self.itemStore.removeItem(item)
+                                                                
+                                                                // Remove the item's image from the image store
+                                                                self.imageStore.deleteImageForKey(item.itemKey)
+                                                                
+                                                                // Also remove that row from the table view with an animation
+                                                                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            })
+            ac.addAction(deleteAction)
+            
+            // Present the alert controller
+            presentViewController(ac, animated: true, completion: nil)
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

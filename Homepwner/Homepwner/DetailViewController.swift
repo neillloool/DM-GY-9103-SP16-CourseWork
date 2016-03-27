@@ -7,7 +7,9 @@
 //
 
 import UIKit
-class DetailViewController: UIViewController, UITextFieldDelegate{
+class DetailViewController: UIViewController, UITextFieldDelegate,
+UINavigationControllerDelegate, UIImagePickerControllerDelegate
+    {
     @IBAction func backgroundTapped(sender: AnyObject) {
         view.endEditing(true)
     }
@@ -17,13 +19,52 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var nameField: CustomTextField!
     @IBOutlet var serialNumberField: CustomTextField!
     @IBOutlet var valueField: CustomTextField!
-    
-    
+    @IBOutlet var imageView: UIImageView!
+
+  
     var item: Item! {
         didSet {
         navigationItem.title = item.name
         }
     }
+    var imageStore: ImageStore!
+    
+    @IBAction func takePicture(sender: UIBarButtonItem) {
+        
+        let imagePicker = UIImagePickerController()
+        
+        // If the device has a camera, take a picture, otherwise,
+        // just pick from photo library
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        }
+        else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        // Place image picker on the screen
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController,
+         didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        
+        // Get picked image from info dictionary
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Store the image in the ImageStore for the item's key
+        imageStore.setImage(image, forKey:item.itemKey)
+        
+        // Put that image onto the screen in our image view
+        imageView.image = image
+        
+        // Take image picker off the screen -
+        // you must call this dismiss method
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
@@ -50,6 +91,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         valueField.text = numberFormatter.stringFromNumber(item.valueInDollars)
         valueField.keyboardType = UIKeyboardType.NumberPad
         
+        // Get the item key
+        let key = item.itemKey
+        
+        // If there is an associated image with the item ...
+        if let imageToDisplay = imageStore.imageForKey(key) {
+            // ... display it on the image view
+            imageView.image = imageToDisplay
+        }
+    
     }
     
     override func viewWillDisappear(animated: Bool) {
