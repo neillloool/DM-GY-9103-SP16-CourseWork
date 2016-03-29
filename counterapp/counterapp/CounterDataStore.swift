@@ -32,4 +32,10 @@ class CounterDataStore
         }
     }
     
+    init() {
+        for _ in 0..<5 {
+            createCounterItem()
+        }
+    }
+    
 }

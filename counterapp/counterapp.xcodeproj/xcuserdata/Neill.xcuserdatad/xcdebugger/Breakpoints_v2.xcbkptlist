@@ -26,12 +26,12 @@
                   moduleName = "counterapp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Neill/Documents/IOS/DM-GY-9103-SP16-CourseWork/DM-GY-9103-SP16-CourseWork/counterapp/counterapp/CounterViewController.swift"
-                  timestampString = "480984376.689809"
+                  timestampString = "480986868.52247"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "41">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "counterapp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Neill/Documents/IOS/DM-GY-9103-SP16-CourseWork/DM-GY-9103-SP16-CourseWork/counterapp/counterapp/CounterViewController.swift"
-                  timestampString = "480984376.689909"
+                  timestampString = "480986868.52263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "21">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -63,8 +63,24 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "CounterDataStore"
-            landmarkType = "3">
+            landmarkName = "createCounterItem()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "counterapp/CounterListViewController.swift"
+            timestampString = "480987222.304522"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

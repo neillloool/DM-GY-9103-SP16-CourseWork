@@ -9,8 +9,7 @@
 import UIKit
 
 class CounterCell: UITableViewCell{
-    
-    
-    
+    @IBOutlet var counterNameVariable: UILabel!
+    @IBOutlet var countLabel: UILabel!
     
 }

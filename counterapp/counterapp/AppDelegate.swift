@@ -15,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+       
+        //create an CounterDataStore
+        let counterDataStore = CounterDataStore()
+        
+        // Access the counterViewController and set its item store
+        let counterController = window!.rootViewController as! CounterListViewController
+        counterController.counterDataStore = counterDataStore
+        
         // Override point for customization after application launch.
         return true
     }

@@ -10,7 +10,6 @@ import UIKit
 
 class CounterViewController: UIViewController {
     
-    
     var countValue: Int!
     
     @IBOutlet var counter: UILabel!

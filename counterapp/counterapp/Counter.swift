@@ -18,6 +18,8 @@ var count: Int
     
     self.countername = name
     self.count = count
+    
+    super.init()
 }
 
 }
