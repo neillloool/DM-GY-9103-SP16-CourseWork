@@ -17,6 +17,7 @@
 		6B64C1231B84C9C900288BE3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1221B84C9C900288BE3 /* Item.swift */; };
 		6B64C1251B84CB3F00288BE3 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64C1241B84CB3F00288BE3 /* ItemStore.swift */; };
 		985383321C8D334B00A6CE6D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985383311C8D334B00A6CE6D /* DetailViewController.swift */; };
+		98622FBC1CAA16F6008EAE3D /* crosshair.svg in Resources */ = {isa = PBXBuildFile; fileRef = 98622FBB1CAA16F6008EAE3D /* crosshair.svg */; };
 		98720FCF1CA87D0C00890D89 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98720FCE1CA87D0C00890D89 /* ImageStore.swift */; };
 		98B8A22A1C9F328400BE9DE7 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B8A2291C9F328400BE9DE7 /* customUITextField.swift */; };
 		98E89AA11C8524C200AF2A61 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E89AA01C8524C200AF2A61 /* ItemCell.swift */; };
@@ -56,6 +57,7 @@
 		6B64C1221B84C9C900288BE3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6B64C1241B84CB3F00288BE3 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		985383311C8D334B00A6CE6D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		98622FBB1CAA16F6008EAE3D /* crosshair.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = crosshair.svg; sourceTree = "<group>"; };
 		98720FCE1CA87D0C00890D89 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		98B8A2291C9F328400BE9DE7 /* customUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
 		98E89AA01C8524C200AF2A61 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				985383311C8D334B00A6CE6D /* DetailViewController.swift */,
 				98720FCE1CA87D0C00890D89 /* ImageStore.swift */,
 				98B8A2291C9F328400BE9DE7 /* customUITextField.swift */,
+				98622FBB1CAA16F6008EAE3D /* crosshair.svg */,
 				6B64C0F91B84C7C300288BE3 /* Assets.xcassets */,
 				6B64C0FB1B84C7C300288BE3 /* LaunchScreen.storyboard */,
 				6B64C0FE1B84C7C300288BE3 /* Info.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B64C0FD1B84C7C300288BE3 /* LaunchScreen.storyboard in Resources */,
+				98622FBC1CAA16F6008EAE3D /* crosshair.svg in Resources */,
 				6B64C0FA1B84C7C300288BE3 /* Assets.xcassets in Resources */,
 				6B64C0F81B84C7C300288BE3 /* Main.storyboard in Resources */,
 			);

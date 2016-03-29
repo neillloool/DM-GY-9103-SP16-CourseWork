@@ -100,6 +100,9 @@
                                             <action selector="takePicture:" destination="lXP-EW-qID" id="Hsa-hk-X8J"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="trash" id="56h-xg-F7n">
+                                        <inset key="imageInsets" minX="950" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -124,6 +127,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="QJe-v8-fRs" id="9Hh-Xd-NNx"/>
+                        <outlet property="deleteAction" destination="56h-xg-F7n" id="fet-ia-Q3u"/>
                         <outlet property="imageView" destination="2Qw-gS-l0U" id="Gxw-JU-sId"/>
                         <outlet property="nameField" destination="QJe-v8-fRs" id="Rsj-Nq-sEs"/>
                         <outlet property="serialNumberFIeld" destination="QJe-v8-fRs" id="J54-dK-B52"/>

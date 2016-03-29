@@ -21,6 +21,7 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate
     @IBOutlet var valueField: CustomTextField!
     @IBOutlet var imageView: UIImageView!
 
+    @IBOutlet var deletePicture: UIBarButtonItem!
   
     var item: Item! {
         didSet {
@@ -32,27 +33,46 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate
     @IBAction func takePicture(sender: UIBarButtonItem) {
         
         let imagePicker = UIImagePickerController()
+        let crossHairPNG = "crosshair.svg.png"
+        let imageCrossHair = UIImage(named: crossHairPNG)
+        let crossHairImageView = UIImageView(image: imageCrossHair)
+        // Use a smaller frame or the crosshairs will be too big
+        crossHairImageView.frame = CGRectMake(0, 0, 50.0, 50.0)
+        let tempView = imagePicker.view
+        crossHairImageView.center = tempView.center
+        tempView.didAddSubview(crossHairImageView)
         
-        // If the device has a camera, take a picture, otherwise,
-        // just pick from photo library
+        
+        
+        
+        
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             imagePicker.sourceType = .Camera
+            //  Add the Camera overlay
+            tempView.frame = (imagePicker.cameraOverlayView?.frame)!
+            imagePicker.cameraOverlayView = crossHairImageView
+            
+
         }
         else {
             imagePicker.sourceType = .PhotoLibrary
         }
         
         imagePicker.delegate = self
-        
+        imagePicker.allowsEditing = true
+
         // Place image picker on the screen
         presentViewController(imagePicker, animated: true, completion: nil)
+        
+        
     }
+    
 
     func imagePickerController(picker: UIImagePickerController,
          didFinishPickingMediaWithInfo info: [String: AnyObject]) {
         
         // Get picked image from info dictionary
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Store the image in the ImageStore for the item's key
         imageStore.setImage(image, forKey:item.itemKey)
@@ -102,6 +122,8 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate
     
     }
     
+    
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -125,7 +147,24 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate
         textField.resignFirstResponder()
         return true
     }
-
+    
+    @IBAction func deletePicture(sender: AnyObject) {
+        let title = "Delete \(item.name) Image"
+        let message = "Are you sure you want to delete this image?"
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        ac.addAction(cancelAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+            self.imageStore.deleteImageForKey(self.item.itemKey)
+            self.imageView.image = nil
+        })
+        
+        ac.addAction(deleteAction)
+        
+        presentViewController(ac, animated: true, completion: nil)
+    }
     
 }
 
