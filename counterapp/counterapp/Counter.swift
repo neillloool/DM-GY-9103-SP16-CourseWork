@@ -9,14 +9,15 @@
 import Foundation
 
 class Counter: NSObject{
-    
-    var countername: String
-    var count: Int
 
+var countername: String
+var count: Int
+
+
+ init(name: String, count: Int){
     
-    init(name: String, count: Int){
-        self.name = name
-        self.count = count
-    }
-    
+    self.countername = name
+    self.count = count
+}
+
 }
