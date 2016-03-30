@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98622FBE1CAB52BF008EAE3D /* CounterNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98622FBD1CAB52BF008EAE3D /* CounterNameController.swift */; };
 		98B8A2381CA20A8400BE9DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B8A2371CA20A8400BE9DE7 /* AppDelegate.swift */; };
 		98B8A23D1CA20A8400BE9DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B8A23B1CA20A8400BE9DE7 /* Main.storyboard */; };
 		98B8A23F1CA20A8400BE9DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B8A23E1CA20A8400BE9DE7 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		98622FBD1CAB52BF008EAE3D /* CounterNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterNameController.swift; sourceTree = "<group>"; };
 		98B8A2341CA20A8400BE9DE7 /* counterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B8A2371CA20A8400BE9DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B8A23C1CA20A8400BE9DE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				98B8A23E1CA20A8400BE9DE7 /* Assets.xcassets */,
 				98B8A2401CA20A8400BE9DE7 /* LaunchScreen.storyboard */,
 				98B8A2431CA20A8400BE9DE7 /* Info.plist */,
+				98622FBD1CAB52BF008EAE3D /* CounterNameController.swift */,
 			);
 			path = counterapp;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98622FBE1CAB52BF008EAE3D /* CounterNameController.swift in Sources */,
 				98B8A2521CA20E5200BE9DE7 /* CounterCell.swift in Sources */,
 				98B8A24C1CA20C5400BE9DE7 /* Counter.swift in Sources */,
 				98B8A2381CA20A8400BE9DE7 /* AppDelegate.swift in Sources */,
@@ -300,6 +304,7 @@
 				98B8A2481CA20A8400BE9DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

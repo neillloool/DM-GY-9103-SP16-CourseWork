@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let counterDataStore = CounterDataStore()
         
         // Access the counterViewController and set its item store
-        let counterController = window!.rootViewController as! CounterListViewController
+        let navController = window!.rootViewController as! UINavigationController
+        let counterController = navController.topViewController as! CounterListViewController
         counterController.counterDataStore = counterDataStore
         
         // Override point for customization after application launch.

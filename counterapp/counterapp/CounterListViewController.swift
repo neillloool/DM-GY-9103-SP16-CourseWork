@@ -12,6 +12,15 @@ class CounterListViewController: UITableViewController
 {
     var counterDataStore: CounterDataStore!
     
+    @IBAction func addNewItem(sender: AnyObject){
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("here")
+    }
+    
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return counterDataStore.allCounterData.count
     }
@@ -22,6 +31,8 @@ class CounterListViewController: UITableViewController
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
